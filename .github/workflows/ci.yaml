@@ -6,6 +6,10 @@ on:
   push:
     branches:
       - main
+  pull_request:
+        branches:
+        - main
+
 
 jobs:
     build:
@@ -45,7 +49,7 @@ jobs:
             - name: Run golangci-lint
               uses: golangci/golangci-lint-action@v2
               with:
-                version: 1.55.2
+                version: v1.55.2
                 run: golangci-lint run
                 working-directory: src/product-catalog
 
